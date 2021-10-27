@@ -36,6 +36,7 @@
                   frameborder="0"
                 )
               v-card-actions.justify-end
+                //- v-btn Закрыть
                 v-btn(
                   text,
                   @click.stop="dialog.value = false",
@@ -127,7 +128,7 @@ p {
 
 .v-btn{
   max-width: 350px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -136,8 +137,6 @@ p {
   width: 100px;
   height: 100px;
 }
-
-
   .block-first {
     height: 500px;
   }
@@ -162,8 +161,6 @@ p {
     width: 225px;
     font-size: 10px;
   }
-  
-
 }
 
 </style>

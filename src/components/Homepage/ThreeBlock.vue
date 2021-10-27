@@ -1,7 +1,7 @@
 <template lang="pug">
-  v-container(class="pa-5 text-left three-block")
-    h2 Наша команда
-    v-row(justify="center")
+  v-container(class="text-left three-block")
+    h2(class="mx-10" ) Наша команда
+    v-row(justify="center" class="mt-10" )
       template
         v-col(cols="4" md="2" class="ma-5")
           a(href="")
@@ -55,18 +55,18 @@ $colorBrend: #282f7e;
 }
 
 h2 {
-  font-size: 2.5vw;
+  font-size: 45px;
   @include font-three-block;
 }
 
 h3 {
   font-weight: 600;
-  font-size: 1vw;
+  font-size: 20px;
   @include font-three-block;
 }
 
 p {
-  font-size: 1vw;
+  font-size: 20px;
   font-weight: 400;
   @include font-three-block
 

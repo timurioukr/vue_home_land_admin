@@ -1,15 +1,27 @@
 <template lang="pug">
 v-container.four-block
-  v-row.ma-10
-    v-col(cols="11", md="12")
+  v-row(class="ma-10" )
+    v-col(cols="12", md="6")
       h2.mb-5 Почему выбирают «ЭйдоС»:
       p &#128073 Уникальные технологии образования
       p &#128073 Эксклюзивный подход к Ребенку
       p &#128073 Комфортные условия обучения
       p &#128073 И еще много чего...
-  v-row.ma-1(justify="center")
-    template
-      v-carousel.elevation-15(
+      h3.mb-5 Углубленное изучение
+      v-row.ma-1
+        img(src="../../assets/img/HomePage/langIcon/mathematics (1).png", alt="mathematics" class="icon__img")
+        p Математики
+      v-row.ma-1
+        img(src="../../assets/img/HomePage/langIcon/united-kingdom (1).png", alt="mathematics" class="icon__img")
+        p Английского языка
+      v-row.ma-1
+        img(src="../../assets/img/HomePage/langIcon/germany (1).png", alt="mathematics" class="icon__img")
+        p Немецкого языка
+      v-row.ma-1
+        img(src="../../assets/img/HomePage/langIcon/france (1).png", alt="mathematics" class="icon__img")
+        p Французского языка
+    v-col(cols="12", md="6")
+      v-carousel(
         hide-delimiters,
         style="max-width: 1300px; border-radius: 15px 15px"
       )
@@ -19,7 +31,7 @@ v-container.four-block
           :src="require(`@/assets/img/HomePage/carousel/${item.name}`)"
         ) 
   v-row
-    v-col.mt-10.mb-5.text-center
+    v-col.mt-10.mb-10.text-center
       v-btn.ma-1(color="#282f7e", large, outlined, rounded) Отправить заявку на экскурсию
         v-icon(right) mdi-chevron-right
 </template>
@@ -58,20 +70,26 @@ export default {
 }
 
 h2 {
-  font-size: 2.5vw;
+  font-size: 45px;
   @include font-four-block;
 }
 
 h3 {
   font-weight: 600;
-  font-size: 1vw;
+  font-size: 20px;
   @include font-four-block;
 }
 
 p {
-  font-size: 1vw;
+  font-size: 20px;
   font-weight: 400;
   @include font-four-block;
+}
+
+.icon__img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 945px) {
@@ -80,13 +98,11 @@ p {
     padding-left: 1px;
   }
   p {
-    font-size: 18px;
+    font-size: 15px;
   }
   .v-btn {
     font-size: 12px;
     width: 300px;
   }
 }
-
-
 </style>
