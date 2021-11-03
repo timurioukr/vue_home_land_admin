@@ -1,5 +1,5 @@
 <template lang="pug">
-v-conteiner
+div
   h2(class="mx-10").text-left Уникальные условия в городе
   v-row(class="ma-10")
     v-col(cols="12", md="6")

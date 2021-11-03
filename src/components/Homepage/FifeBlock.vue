@@ -1,14 +1,13 @@
 <template lang="pug">
-v-container(class="ma-10")
-  v-row
-    v-col(cols="12", md="6")
-      h2.text-left Образовательные технологии
-      p.text-left Учителя нашей Школы используют инновационные педагогические технологии в работе с Учениками. Об этом вы можете узнать от своих Детей, которые уже учатся у нас или при поступлении в нашу Школу. При этом, базовые технологии образования, успешность и результативность которых подтвердилась многолетним опытом работы с учащимися, является своеобразным фундаментом при формировании учебных программ. Предлагаем вам подробно ознакомиться с теориями, концепциями, технологиями и программами, которые наши педагоги используют во время работы.
-    v-row
-      v-col(cols="6", md="6")
+  v-container
+    v-row.justify-space-around.align-center
+      v-col(cols="12" md="5")
+        h2 Образовательные технологии
+        p Учителя нашей Школы используют инновационные педагогические технологии в работе с Учениками. Об этом вы можете узнать от своих Детей, которые уже учатся у нас или при поступлении в нашу Школу. При этом, базовые технологии образования, успешность и результативность которых подтвердилась многолетним опытом работы с учащимися, является своеобразным фундаментом при формировании учебных программ. Предлагаем вам подробно ознакомиться с теориями, концепциями, технологиями и программами, которые наши педагоги используют во время работы.
+      v-col.py-0(cols="11" md="3")
         v-dialog(v-model="dialog1", width="500px")
           template(v-slot:activator="{ on, attrs }")
-            v-card(v-bind="attrs", v-on="on")
+            v-card.mb-6(v-bind="attrs", v-on="on")
               v-img.six-block-img-1
                 span.title-span.white--text.p TRIZ
                   v-icon.white--text.ml-5(large) mdi-cog-outline
@@ -19,10 +18,9 @@ v-container(class="ma-10")
             v-card-actions
               v-spacer
               v-btn(color="silver", text, @click="dialog1 = false") Закрыть
-      
         v-dialog(v-model="dialog2", width="500px")
           template(v-slot:activator="{ on, attrs }")
-            v-card(v-bind="attrs", v-on="on")
+            v-card.mb-6(v-bind="attrs", v-on="on")
               v-img.six-block-img-2
                 span.title-span.white--text.p ЭЙДЕТИКА
                   v-icon.white--text.ml-5(large) mdi-brain
@@ -33,10 +31,10 @@ v-container(class="ma-10")
             v-card-actions
               v-spacer
               v-btn(color="silver", text, @click="dialog2 = false") Закрыть
-      v-col(cols="6", md="6")  
+      v-col.py-0(cols="11" md="3")
         v-dialog(v-model="dialog3", width="500px")
           template(v-slot:activator="{ on, attrs }")
-            v-card(v-bind="attrs", v-on="on")
+            v-card.mb-6(v-bind="attrs", v-on="on")
               v-img.six-block-img-3
                 span.title-span.white--text.p ФСП
                   v-icon.white--text.ml-5(large) mdi-ruler-square-compass
@@ -47,10 +45,9 @@ v-container(class="ma-10")
             v-card-actions
               v-spacer
               v-btn(color="silver", text, @click="dialog3 = false") Закрыть
-
         v-dialog(v-model="dialog4", width="500px")
           template(v-slot:activator="{ on, attrs }")
-            v-card(v-bind="attrs", v-on="on")
+            v-card.mb-6(v-bind="attrs", v-on="on")
               v-img.six-block-img-4
                 span.title-span.white--text.p ОТИ
                   v-icon.white--text.ml-5(large) mdi-school

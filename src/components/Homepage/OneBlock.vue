@@ -1,5 +1,5 @@
 <template lang="pug">
-.block-first
+div.block-first
   v-row.pa-0.ma-0
     v-col(cols="12", md="6", class="block-first-left")
       v-img.mb-4(src="../../assets/img/logo.png" class="first-block-logo")
@@ -36,7 +36,6 @@
                   frameborder="0"
                 )
               v-card-actions.justify-end
-                //- v-btn Закрыть
                 v-btn(
                   text,
                   @click.stop="dialog.value = false",
@@ -128,7 +127,7 @@ p {
 
 .v-btn{
   max-width: 350px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -160,6 +159,7 @@ p {
   .block-first-btn {
     width: 225px;
     font-size: 10px;
+    color: white;
   }
 }
 

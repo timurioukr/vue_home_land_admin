@@ -1,6 +1,6 @@
 <template lang="pug">
 v-container.four-block
-  v-row(class="ma-10" )
+  v-row
     v-col(cols="12", md="6")
       h2.mb-5 Почему выбирают «ЭйдоС»:
       p &#128073 Уникальные технологии образования
