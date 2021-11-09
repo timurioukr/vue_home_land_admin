@@ -7,7 +7,8 @@ const routerOptions = [
   { path: "/kindergarten", component: "Kindergarten" },
   { path: "/centr", component: "Centr"},
   { path: "/contacts", component: "Contacts"},
-  { path: "*", component: "404" }
+  { path: "*", component: "404" },
+  { path: "/admin", component: "AdminPage" }
 ];
 
 const routes = routerOptions.map(route => {
