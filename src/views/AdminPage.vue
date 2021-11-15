@@ -58,6 +58,147 @@
               </v-col>
             </v-row>
           </v-card>
+          <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-n1">
+            <v-toolbar-title>Последние новости</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <span class="grey--text">Смотреть все</span>
+          </v-toolbar>
+          <v-row class="mt-n5">
+            <v-col cols="12" sm="4">
+              <v-card class="rounded-xl ml-4" color="grey lighten-3" flat>
+                <v-card-title>
+                  <span class="text-h6 font-weight-light">Что-то</span>
+                </v-card-title>
+                <v-card-text>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quia.
+                </v-card-text>
+                <v-card-actions class="mt-n7">
+                  <v-list-item>
+                    <div color="grey darken-3">
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/1.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/3.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/4.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30" color="black">
+                        <span class="caption white--text">+1</span>
+                      </v-avatar>
+                    </div>
+                    <v-row align="center" justify="center">
+                      <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
+                      <span class="caption">1.5</span>
+                    </v-row>
+                  </v-list-item>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="4">
+              <v-card class="rounded-xl ml-4" color="grey lighten-3" flat>
+                <v-card-title>
+                  <span class="text-h6 font-weight-light">Что-то</span>
+                </v-card-title>
+                <v-card-text>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quia.
+                </v-card-text>
+                <v-card-actions class="mt-n7">
+                  <v-list-item>
+                    <div color="grey darken-3">
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/1.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/3.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/4.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30" color="black">
+                        <span class="caption white--text">+1</span>
+                      </v-avatar>
+                    </div>
+                    <v-row align="center" justify="center">
+                      <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
+                      <span class="caption">1.5</span>
+                    </v-row>
+                  </v-list-item>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+
+            <v-col cols="12" sm="4">
+              <v-card class="rounded-xl" color="grey" flat>
+                <v-card-title>
+                  <span class="text-h6 font-weight-light">Что-то</span>
+                </v-card-title>
+                <v-card-text>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quia.
+                </v-card-text>
+                <v-card-actions class="mt-n6">
+                  <v-list-item>
+                    <div color="grey darken-3">
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/1.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/3.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30">
+                        <img src="https://cdn.vuetifyjs.com/images/lists/4.jpg">
+                      </v-avatar>
+                      <v-avatar class="ml-n3" size="30" color="black">
+                        <span class="caption white--text">+1</span>
+                      </v-avatar>
+                    </div>
+                    <v-row align="center" justify="center">
+                      <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
+                      <span class="caption">1.5</span>
+                    </v-row>
+                  </v-list-item>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+          <v-card class="mx-4 rounded-xl pa-6 mt-2" color="grey lighten-3" flat>
+            <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-n5">
+              <v-toolbar-title>Analitics</v-toolbar-title>
+            
+            <v-spacer></v-spacer>
+            <v-btn-toggle v-model="text" small dense dark background-color="primary">
+              <v-btn value="weekly">
+                Weekly
+              </v-btn>
+              <v-btn value="monthly">
+                Monthly
+              </v-btn>
+            </v-btn-toggle>
+            </v-toolbar>
+            <v-sparkline :value="value" 
+            :smooth="radius || false"
+            :padding="padding"
+            :line-width="width"
+            :stroke-linecap="lineCap"
+            :fill="fill"
+            :type="type"
+            :auto-line-width="autoLineWidth"
+            auto-draw
+            color="black"
+            class="mt-n8 mb-n8"
+
+            ></v-sparkline>
+          </v-card>
         </v-col>
         <v-col cols="12" sm="4"></v-col>
       </v-row>
