@@ -173,7 +173,7 @@
           </v-row>
           <v-card class="mx-4 rounded-xl pa-6 mt-2" color="grey lighten-3" flat>
             <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-n5">
-              <v-toolbar-title>Analitics</v-toolbar-title>
+              <v-toolbar-title>Количество учащихся</v-toolbar-title>
             
             <v-spacer></v-spacer>
             <v-btn-toggle v-model="text" small dense dark background-color="primary">
@@ -200,7 +200,38 @@
             ></v-sparkline>
           </v-card>
         </v-col>
-        <v-col cols="12" sm="4"></v-col>
+        <v-col cols="12" sm="4">
+          <v-card class="rounded-xl pa-4" color="grey lighten-3" flat>
+            <v-app-bar color="rgba(0,0,0,0)" tile>
+              <v-btn tile fab small color="orange lighten-4" elevation="0">
+                <v-icon color="black">fas fa-book</v-icon>
+              </v-btn>
+              <strong class="subtitle black--text ml-2">
+                Art posted <span class="caption"><br>80</span>
+
+              </strong>
+              <v-spacer></v-spacer>
+              <v-icon color="grey" class="ml-2">fas fa-chevron-circle-right</v-icon>
+            </v-app-bar>
+            <v-app-bar color="rgba(0,0,0,0)" tile>
+              <v-btn tile fab small color="orange lighten-4" elevation="0">
+                <v-icon color="black">fas fa-book</v-icon>
+              </v-btn>
+              <strong class="subtitle black--text ml-2">
+                Art posted <span class="caption"><br>80</span>
+
+              </strong>
+              <v-spacer></v-spacer>
+              <v-icon color="grey" class="ml-2">fas fa-chevron-circle-right</v-icon>
+            </v-app-bar>
+              <v-card color="white" class="rounded-xl mx-4 pa-10" flat>
+                <div class="text-center">
+                  <span>Buy Somth Somth</span>
+                  <v-btn class="mt-5" dark color="black">Purch</v-btn>
+                </div>
+              </v-card>
+          </v-card>
+        </v-col>
       </v-row>
     </v-container>
   </v-template>
