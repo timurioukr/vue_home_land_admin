@@ -1,12 +1,17 @@
 <template>
-  <v-container>
-    <h2>Школа</h2>
-  </v-container>
+  <div>
+    <FirstBlock />
+  </div>
 </template>
 
 <script>
+import FirstBlock from "../components/School/FirstBlock.vue"
+
 export default {
   name: "School",
+  components: {
+    FirstBlock
+  },
   data() {
     return {
     }

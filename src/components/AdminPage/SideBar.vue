@@ -60,49 +60,5 @@ export default {
   text-decoration: none;
 }
 
-/* .border b:nth-child(1) {
-  position: absolute;
-  top: -20px;
-  height: 20px;
-  width: 83%;
-  background: white;
-  display: none;
-}
-
-.border b:nth-child(1)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-bottom-right-radius: 20px;
-  background: rgba(64, 136, 251, 0.904);;
-}
-
-.border b:nth-child(2) {
-  position: absolute;
-  bottom: -20px;
-  height: 20px;
-  width: 83%;
-  background: none;
-}
-
-.border b:nth-child(2)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-top-right-radius: 20px;
-  background: rgba(64, 136, 251, 0.904);
-}
-
-.border b:nth-child(1),
-.border b:nth-child(2) {
-  display: block;
-} */
-
 
 </style>
