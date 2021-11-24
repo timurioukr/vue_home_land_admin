@@ -2,16 +2,16 @@
 div.block-first
   v-row.pa-0.ma-0
     v-col(cols="12", md="6", class="block-first-left")
-      v-img.mb-4(src="../../assets/img/logo.png" class="first-block-logo")
-      h2 Школа «ЭйдоС»
-      p Частный комплекс непрерывного образования
-      
-      v-btn.mt-5(color="#282f7e", large, rounded class="block-first-btn") Отправить заявку на экскурсию
+      v-img(src="../../assets/img/logo.png" class="first-block-logo")
+      div( style="width:500px;")
+        h2 {{ $t('Школа «ЭйдоС»')}}
+        p {{ $t('Частный комплекс непрерывного образования')}}
+        v-btn.mt-5(color="#282f7e", large, rounded class="block-first-btn") {{ $t('Отправить заявку на экскурсию')}}
 
     v-col(cols="12", md="6", class="block-first-right")
-      .block-first-right-play
+      div.block-first-right-play
         v-dialog(
-          transition="dialog-bottom-transition",
+          v-model="dialog"
           max-width="600",
           height="500"
         )
@@ -23,24 +23,23 @@ div.block-first
               style="opacity: 0.7",
               v-bind="attrs",
               v-on="on",
-              @click="show = !show"
             )
               v-icon(large) mdi-play
-          template(cols="5", v-slot:default="dialog", v-if="show")
-            v-card(style="opacity: 1")
-              div
-                iframe(
-                  width="600",
-                  height="350",
-                  src="https://www.youtube.com/embed/LU8gWOYfZ5E",
-                  frameborder="0"
-                )
-              v-card-actions.justify-end
-                v-btn(
-                  text,
-                  @click.stop="dialog.value = false",
-                  @click="show = !show"
-                ) Закрыть
+          v-card
+            iframe(
+              v-if="dialog"
+              width="600",
+              height="350",
+              src="https://www.youtube.com/embed/LU8gWOYfZ5E",
+              frameborder="0"
+            )
+            v-card-actions
+              v-spacer
+              v-btn(
+                text,
+                color="blue" 
+                @click="dialog = false"
+              ) {{ $t('Закрыть')}}
       .block-first-right-video
         v-img(
           width="500",
@@ -55,10 +54,14 @@ export default {
   data() {
     return {
       dialog: false,
-      show: false,
     };
   },
-  methods: {},
+  methods: {
+    closeVideo() {
+      this.show = false,
+      this.dialog = false
+    }
+  },
 };
 </script>
 

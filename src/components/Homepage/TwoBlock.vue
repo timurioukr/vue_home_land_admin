@@ -13,7 +13,7 @@
               src="../../assets/img/HomePage/buttons/school.jpg",
               height="225px"
             )
-              span.title-span.white--text.p Школа
+              span.title-span.white--text.p {{ $t('Школа')}}
       v-col(cols="12", md="3")
         v-hover(v-slot="{ hover }")
           v-card(
@@ -25,7 +25,7 @@
               src="../../assets/img/HomePage/buttons/kindergarten.jpg",
               height="225px"
             )
-              span.title-span.white--text.p Сад
+              span.title-span.white--text.p {{ $t('Сад')}}
       v-col(cols="12", md="3")
         v-hover(v-slot="{ hover }")
           v-card(
@@ -37,7 +37,7 @@
               src="../../assets/img/HomePage/buttons/centr.jpg",
               height="225px"
             )
-              span.title-span.white--text.p Центр
+              span.title-span.white--text.p {{ $t('Центр')}}
       v-col(cols="12", md="3")
         v-hover(v-slot="{ hover }")
           v-card(
@@ -49,7 +49,7 @@
               src="../../assets/img/HomePage/buttons/dist.jpg",
               height="225px"
             )
-              span.title-span.white--text.p Экстернат
+              span.title-span.white--text.p {{ $t('Экстернат')}}
 </template>
 
 <script>
