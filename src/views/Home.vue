@@ -11,12 +11,12 @@
 
 
 <script>
-import FirstBlock from "../components/Homepage/OneBlock.vue"
-import TwoBlock from "../components/Homepage/TwoBlock.vue"
-import ThreeBlock from "../components/Homepage/ThreeBlock.vue"
-import FourBlock from "../components/Homepage/FourBlock.vue"
-import SixBlock from "../components/Homepage/FifeBlock.vue"
-import SevenBlock from "../components/Homepage/SixBlock.vue"
+import FirstBlock from "../components/Homepage/One.vue"
+import TwoBlock from "../components/Homepage/Two.vue"
+import ThreeBlock from "../components/Homepage/Three.vue"
+import FourBlock from "../components/Homepage/Four.vue"
+import SixBlock from "../components/Homepage/Fife.vue"
+import SevenBlock from "../components/Homepage/Six.vue"
 
 
 

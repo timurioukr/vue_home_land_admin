@@ -1,8 +1,7 @@
 <template lang="pug">
-div
-  h2(class="mx-10").text-left Уникальные условия в городе
-  v-row(class="ma-10")
+  v-row.ma-15
     v-col(cols="12", md="6")
+      h2 Уникальные условия в городе
       v-row.mt-10.ma-5(align="center", justify="center" class="align-self-start")
         v-col(cols="12", md="4" align="center")
           v-img(src="../../assets/img/HomePage/langIcon/house.png" class="icon__img")
@@ -23,7 +22,7 @@ div
           v-img(src="../../assets/img/HomePage/langIcon/home-button.png" class="icon__img")
           p График - полупансион
     v-row(class="pa-10").align-center
-      v-col.fife-block-right.text-center(cols="12", md="12") 
+      v-col.fife-block-right.text-center(cols="12", md="11") 
         h2.white--text Запишитесь на экскурсию
         v-btn.ma-1(color="#ffff", large, outlined, rounded) Записаться
 </template>

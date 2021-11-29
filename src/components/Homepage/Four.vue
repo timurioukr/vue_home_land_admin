@@ -1,6 +1,6 @@
 <template lang="pug">
 v-container.four-block
-  v-row
+  v-row.ma-10(class="four-text")
     v-col(cols="12", md="6")
       h2.mb-5 Почему выбирают «ЭйдоС»:
       p &#128073 Уникальные технологии образования
@@ -104,5 +104,9 @@ p {
     font-size: 12px;
     width: 300px;
   }
+  .four-text {
+    margin: 0 !important;
+  }
+
 }
 </style>

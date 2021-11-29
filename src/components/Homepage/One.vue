@@ -3,7 +3,7 @@ div.block-first
   v-row.pa-0.ma-0
     v-col(cols="12", md="6", class="block-first-left")
       v-img(src="../../assets/img/logo.png" class="first-block-logo")
-      div( style="width:500px;")
+      div
         h2 {{ $t('Школа «ЭйдоС»')}}
         p {{ $t('Частный комплекс непрерывного образования')}}
         v-btn.mt-5(color="#282f7e", large, rounded class="block-first-btn") {{ $t('Отправить заявку на экскурсию')}}
