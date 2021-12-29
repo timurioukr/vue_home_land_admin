@@ -8,7 +8,8 @@ const routerOptions = [
   { path: "/centr", component: "Centr"},
   { path: "/contacts", component: "Contacts"},
   { path: "*", component: "404" },
-  { path: "/admin", component: "AdminPage" }
+  { path: "/admin", component: "AdminPage" },
+  { path: "/login", component: "Login" },
 ];
 
 const routes = routerOptions.map(route => {
@@ -19,6 +20,7 @@ const routes = routerOptions.map(route => {
 });
 
 Vue.use(Router);
+
 
 export default new Router({
   mode: "history",

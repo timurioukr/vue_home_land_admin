@@ -6,7 +6,7 @@ div.block-first
       div
         h2 {{ $t('Школа «ЭйдоС»')}}
         p {{ $t('Частный комплекс непрерывного образования')}}
-        v-btn.mt-5(color="#282f7e", large, rounded class="block-first-btn") {{ $t('Отправить заявку на экскурсию')}}
+        v-btn.mt-5(color="#282f7e", large, rounded class="block-first-btn" href="/404") {{ $t('Отправить заявку на экскурсию')}}
 
     v-col(cols="12", md="6", class="block-first-right")
       div.block-first-right-play
