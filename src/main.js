@@ -4,14 +4,12 @@ import vuetify from './plugins/vuetify';
 import router from './Router';
 import './assets/styles.scss'
 import i18n from '@/localization/index'
-
-
-
-Vue.config.productionTip = false;    
+import store from '@/store'
 
 new Vue({
   i18n,
   router,
   vuetify,
+  store,
   render: h => h(App)
 }).$mount('#app');

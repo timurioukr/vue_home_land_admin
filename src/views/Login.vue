@@ -38,22 +38,32 @@
                 )
           v-card-actions
             v-spacer
-            v-btn(color="primary") Login
+            v-btn(color="primary" :loading="isLoading" @click="loginUser") Login
 </template>
 
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
+
 
 export default {
   name: "Login",
   data() {
     return {
+      isLoading: false,
       body: {
         email: null,
         password: null
       }
     };
   },
+  methods: {
+    ...mapActions(['getTemplate', 'setSelectedMacros', 'registrationTemplate'] ),
+    loginUser(this.body) {
+      this.isLoading = true
+    }
+  }
 };
 </script>
 
