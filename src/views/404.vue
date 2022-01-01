@@ -1,13 +1,12 @@
 <template>
     <v-container>
       <div class="text-center">
-        <h1>Вау, да это же ошибка 404</h1>
+        <h1>Wow, this error 404</h1>
         <img src="../assets/img/image404.gif" alt="">
       </div>
       <div class="text-center">
-        <h2>Значит, что вы потерялись!</h2>
-        
-        <v-btn class="mt-10 white--text" to="/" color="blue">На главную</v-btn>
+        <h2>Looks as if you've lost your way</h2>
+        <v-btn class="mt-10 white--text" to="/" color="blue">Go home</v-btn>
       </div>
         
     </v-container>
@@ -15,7 +14,7 @@
 
 <script>
 export default {
-  name: "404",
+  name: "ErorPage",
   data() {
     return {};
   },

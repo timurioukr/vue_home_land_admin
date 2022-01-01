@@ -22,7 +22,7 @@
         </v-list-item-group>
       </v-list>
       <div style="position: absolute; bottom: 20px; left: 20px; ">
-        <v-btn text>
+        <v-btn text @click="logOut">
           <v-icon color="rgb(47, 68, 158)">fas fa-sign-out-alt</v-icon>
         </v-btn>
       
@@ -32,6 +32,9 @@
 </template>
 
 <script>
+import '../plugins/auth/user.service'
+import {router} from "@/Router";
+
 export default {
   data: () => ({
     selectedItem: 0,
@@ -43,7 +46,13 @@ export default {
       {icon: 'fas fa-archive'},
       {icon: 'fas fa-cog'},
     ]
-  })
+  }),
+  methods: {
+    logOut() {
+      localStorage.removeItem('user');
+      router.push('/')
+    }
+  }
 }
 </script>
 

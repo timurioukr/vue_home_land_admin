@@ -66,13 +66,12 @@ export default {
   data() {
     return {
       dialogMenu: false,
-      companyName: "ШКОЛА «ЭЙДОС»",
+      companyName: "PET PROJECT",
       menuItems: [
-        { title: "Главная", path: "/" },
-        { title: "Школа", path: "school" },
-        { title: "Сад", path: "kindergarten" },
-        { title: "Центр", path: "centr" },
-        { title: "Контакты", path: "contacts" },
+        { title: "Home", path: "/" },
+        { title: "What used", path: "school" },
+        { title: "Contact to me", path: "contacts" },
+        { title: "Admin panel", path: "admin" },
       ],
     };
   },

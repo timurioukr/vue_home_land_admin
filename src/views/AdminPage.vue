@@ -1,36 +1,36 @@
 <template>
-  <v-template>
+  <div v-if="user && posts.length > 1">
     <SideBar />
     <v-container>
-      <v-app-bar color="rgba(0,0,0,0)" flat>
-        <v-text-field 
-          label="Search..." 
-          class="pt-5" 
-          filled 
+      <v-app-bar color="rgba(0,0,0,0)" flat >
+        <v-text-field
+          label="Search..."
+          class="pt-5"
+          filled
           prepend-inner-icon="mdi-magnify"
-          dense 
-          solo 
-          flat 
-          background-color="grey lighten-4" 
+          dense
+          solo
+          flat
+          background-color="grey lighten-4"
           rounded
         ></v-text-field>
         <v-spacer></v-spacer>
         <v-btn icon dark>
           <v-icon color="black">far fa-bell</v-icon>
         </v-btn>
-        <v-select 
-          class="mt-7" 
-          :items="items" 
-          v-model="select" 
-          item-text="state" 
-          color="black" 
-          solo 
-          flat 
+        <v-select
+          class="mt-7"
+          :items="items"
+          v-model="select"
+          item-text="state"
+          color="black"
+          solo
+          flat
           style="max-width: 7%;" item-color="grey darken-2"
         ></v-select>
-        <span text color="#878A94">School</span>
+        <span text color="#878A94">{{ user.first_name }}</span>
         <v-avatar size='30' class="ml-2">
-          <v-img src="https://cdn.vuetifyjs.com/images/lists/2.jpg"></v-img>
+          <v-img :src='user.avatar'></v-img>
         </v-avatar>
       </v-app-bar>
       <v-row>
@@ -40,9 +40,8 @@
               <v-col cols="12" sm="8">
                 <v-list-item three-line>
                   <v-list-item-content>
-                  <v-list-item-title class="text-h4" mb-1>School</v-list-item-title>
-                  <v-list-item-subtitle>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eum distinctio iure animi. Cumque necessitatibus eaque eligendi commodi veritatis. Repellendus blanditiis iusto, eaque doloribus sunt perferendis laborum nobis cumque dicta!</v-list-item-subtitle>
-                  <v-list-item-subtitle>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eum distinctio iure animi. Cumque necessitatibus eaque eligendi!</v-list-item-subtitle>
+                  <v-list-item-title class="text-h4" mb-1>{{this.posts[0].title}}</v-list-item-title>
+                  <v-list-item-subtitle>{{this.posts[0].body}}</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
                 <v-card-actions>
@@ -50,9 +49,9 @@
                 </v-card-actions>
               </v-col>
               <v-col cols="12" sm="4">
-                <v-img 
-                src="../assets/img/EidosCRM/teacher.png" 
-                class="mt-n16" 
+                <v-img
+                src="../assets/img/EidosCRM/teacher.png"
+                class="mt-n16"
                 style=" transform: rotateY(180deg)"
                 ></v-img>
               </v-col>
@@ -174,7 +173,7 @@
           <v-card class="mx-4 rounded-xl pa-6 mt-2" color="grey lighten-3" flat>
             <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-n5">
               <v-toolbar-title>Количество учащихся</v-toolbar-title>
-            
+
             <v-spacer></v-spacer>
             <v-btn-toggle v-model="text" small dense dark background-color="primary">
               <v-btn value="weekly">
@@ -185,7 +184,7 @@
               </v-btn>
             </v-btn-toggle>
             </v-toolbar>
-            <v-sparkline :value="value" 
+            <v-sparkline :value="value"
             :smooth="radius || false"
             :padding="padding"
             :line-width="width"
@@ -234,11 +233,13 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-template>
+  </div>
 </template>
 
 <script>
-import SideBar from '../components/AdminPage/SideBar.vue'
+import { mapActions, mapState } from 'vuex'
+import SideBar from '../components/SideBar'
+
 
 export default {
   name: 'AdminPage',
@@ -257,7 +258,20 @@ export default {
     fill: false,
     type: 'trend',
     autoLineWidth: false,
-  })
+  }),
+  created() {
+    this.getUserProfile()
+    this.getPosts()
+  },
+  computed: {
+    ...mapState({
+      posts: state => state.posts,
+      user: state => state.profile.data
+    })
+  },
+  methods: {
+    ...mapActions(['getUserProfile', 'getPosts']),
+  }
 }
 </script>
 
