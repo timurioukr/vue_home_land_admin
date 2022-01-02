@@ -12,7 +12,8 @@ export default new Vuex.Store({
       id: '',
       last_name: ''
     },
-    posts: []
+    posts: [],
+    users: []
   },
   mutations: {
     SET_DATA_PROFILE (state, data) {
@@ -33,6 +34,12 @@ export default new Vuex.Store({
       const response = await fetch('https://jsonplaceholder.typicode.com/posts')
       const data = await response.json()
       response && context.commit('SET_DATA_PROFILE', {posts: data })
+      return response
+    },
+    async getUsers (context) {
+      const response = await fetch('https://reqres.in/api/users?page=1')
+      const data = await response.json()
+      response && context.commit('SET_DATA_PROFILE', {users: data })
       return response
     },
   },

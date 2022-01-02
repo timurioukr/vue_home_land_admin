@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user && posts.length > 1">
+  <div v-if="users && user && posts.length > 1">
     <SideBar />
     <v-container>
       <v-app-bar color="rgba(0,0,0,0)" flat >
@@ -11,12 +11,12 @@
           dense
           solo
           flat
-          background-color="grey lighten-4"
+          background-color="blue lighten-5"
           rounded
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn icon dark>
-          <v-icon color="black">far fa-bell</v-icon>
+        <v-btn icon dark  @click="ballActive = !ballActive">
+          <v-icon color="black">{{ ballActive ?' mdi-bell' :' mdi-bell-off' }} </v-icon>
         </v-btn>
         <v-select
           class="mt-7"
@@ -26,141 +26,63 @@
           color="black"
           solo
           flat
-          style="max-width: 7%;" item-color="grey darken-2"
+          style="max-width: 7%;"
+          item-color="grey darken-2"
         ></v-select>
         <span text color="#878A94">{{ user.first_name }}</span>
-        <v-avatar size='30' class="ml-2">
+        <v-avatar size='50' class="ml-2">
           <v-img :src='user.avatar'></v-img>
         </v-avatar>
       </v-app-bar>
       <v-row>
         <v-col cols="12" sm="8">
-          <v-card class="mx-4 rounded-xl pa-4" color="grey lighten-3" flat>
+          <v-card class="mx-4 mt-5 rounded-xl pa-4" color="blue lighten-5" flat>
             <v-row>
               <v-col cols="12" sm="8">
                 <v-list-item three-line>
                   <v-list-item-content>
                   <v-list-item-title class="text-h4" mb-1>{{this.posts[0].title}}</v-list-item-title>
-                  <v-list-item-subtitle>{{this.posts[0].body}}</v-list-item-subtitle>
+                  <v-list-item-subtitle v-if="viewDetail">{{this.posts[0].body}}</v-list-item-subtitle>
+                    <p v-else>{{this.posts[0].body}}</p>
                   </v-list-item-content>
                 </v-list-item>
                 <v-card-actions>
-                  <v-btn class="px-3" color="black" dark>View detail</v-btn>
+                  <v-btn class="px-3" color="primary" dark @click="viewDetail = !viewDetail">View detail</v-btn>
                 </v-card-actions>
               </v-col>
               <v-col cols="12" sm="4">
                 <v-img
-                src="../assets/img/EidosCRM/teacher.png"
+                src="../assets/img/petProject/userAdmin.png"
                 class="mt-n16"
-                style=" transform: rotateY(180deg)"
                 ></v-img>
               </v-col>
             </v-row>
           </v-card>
-          <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-n1">
-            <v-toolbar-title>Последние новости</v-toolbar-title>
+          <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-5">
+            <v-toolbar-title>Last news</v-toolbar-title>
             <v-spacer></v-spacer>
-            <span class="grey--text">Смотреть все</span>
+            <span class="grey--text" @click="showAllNews = !showAllNews" style="cursor: pointer;">Show all news</span>
           </v-toolbar>
           <v-row class="mt-n5">
-            <v-col cols="12" sm="4">
-              <v-card class="rounded-xl ml-4" color="grey lighten-3" flat>
-                <v-card-title>
-                  <span class="text-h6 font-weight-light">Что-то</span>
-                </v-card-title>
-                <v-card-text>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quia.
-                </v-card-text>
-                <v-card-actions class="mt-n7">
-                  <v-list-item>
-                    <div color="grey darken-3">
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/1.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/3.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/4.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30" color="black">
-                        <span class="caption white--text">+1</span>
-                      </v-avatar>
-                    </div>
-                    <v-row align="center" justify="center">
-                      <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
-                      <span class="caption">1.5</span>
-                    </v-row>
-                  </v-list-item>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-            <v-col cols="12" sm="4">
-              <v-card class="rounded-xl ml-4" color="grey lighten-3" flat>
-                <v-card-title>
-                  <span class="text-h6 font-weight-light">Что-то</span>
-                </v-card-title>
-                <v-card-text>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quia.
-                </v-card-text>
-                <v-card-actions class="mt-n7">
-                  <v-list-item>
-                    <div color="grey darken-3">
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/1.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/3.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/4.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30" color="black">
-                        <span class="caption white--text">+1</span>
-                      </v-avatar>
-                    </div>
-                    <v-row align="center" justify="center">
-                      <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
-                      <span class="caption">1.5</span>
-                    </v-row>
-                  </v-list-item>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-
-            <v-col cols="12" sm="4">
-              <v-card class="rounded-xl" color="grey" flat>
-                <v-card-title>
-                  <span class="text-h6 font-weight-light">Что-то</span>
-                </v-card-title>
-                <v-card-text>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, quia.
-                </v-card-text>
-                <v-card-actions class="mt-n6">
-                  <v-list-item>
-                    <div color="grey darken-3">
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/1.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/3.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30">
-                        <img src="https://cdn.vuetifyjs.com/images/lists/4.jpg">
-                      </v-avatar>
-                      <v-avatar class="ml-n3" size="30" color="black">
-                        <span class="caption white--text">+1</span>
-                      </v-avatar>
-                    </div>
+            <v-col
+                lazy
+                cols="12"
+                sm="4"
+                v-for="post in newsPostLists"
+                :key="post.id">
+              <v-card
+                  class="rounded-xl ml-4"
+                  color="blue lighten-5"
+                  flat>
+                  <v-card-title>{{post.title.slice(4, 20)}}</v-card-title>
+                  <v-card-text>{{itemDates.body}}</v-card-text>
+                  <v-card-actions class="mt-n7">
+                    <v-list-item>
+                      <div color="grey darken-3">
+                        <v-avatar class="ml-n2" size="30"  v-for="user in users" :key="user.id">
+                          <v-img :src='user.avatar'></v-img>
+                        </v-avatar>
+                      </div>
                     <v-row align="center" justify="center">
                       <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
                       <span class="caption">1.5</span>
@@ -170,35 +92,40 @@
               </v-card>
             </v-col>
           </v-row>
-          <v-card class="mx-4 rounded-xl pa-6 mt-2" color="grey lighten-3" flat>
-            <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-n5">
-              <v-toolbar-title>Количество учащихся</v-toolbar-title>
 
+
+          <v-toolbar flat color="rgba(0,0,0,0)" dense class="mt-5">
+            <v-toolbar-title>Qantity of users: {{ users.length }}</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn-toggle v-model="text" small dense dark background-color="primary">
-              <v-btn value="weekly">
+          </v-toolbar>
+          <v-card class="mx-4 pa-5 rounded-xl" color="blue lighten-5" flat>
+              <v-spacer></v-spacer>
+            <v-btn-toggle v-model="btnToggle">
+              <v-btn value="weekly" @click="mountlySparkData = false">
                 Weekly
               </v-btn>
-              <v-btn value="monthly">
+              <v-btn value="mountly" @click="mountlySparkData = true">
                 Monthly
               </v-btn>
             </v-btn-toggle>
             </v-toolbar>
-            <v-sparkline :value="value"
-            :smooth="radius || false"
-            :padding="padding"
-            :line-width="width"
-            :stroke-linecap="lineCap"
-            :fill="fill"
-            :type="type"
-            :auto-line-width="autoLineWidth"
-            auto-draw
-            color="black"
-            class="mt-n8 mb-n8"
-
-            ></v-sparkline>
+            <v-sparkline
+                :value="currentSparkData"
+                :smooth="radius || false"
+                :padding="padding"
+                :line-width="width"
+                :stroke-linecap="lineCap"
+                :fill="fill"
+                :type="type"
+                :auto-line-width="autoLineWidth"
+                auto-draw
+                color="black"
+                class="mt-n8 mb-n8"
+              ></v-sparkline>
           </v-card>
         </v-col>
+
+
         <v-col cols="12" sm="4">
           <v-card class="rounded-xl pa-4" color="grey lighten-3" flat>
             <v-app-bar color="rgba(0,0,0,0)" tile>
@@ -247,14 +174,23 @@ export default {
     SideBar
   },
   data: () => ({
+    mountlySparkData: false,
+    itemDates: {
+      title: 'Soms',
+      text: 'Lorem ipsum set amet doloren'
+    },
+    showAllNews: false,
+    viewDetail: true,
+    ballActive: true,
     select: {state: 'EN'},
     items: ['EN', 'ES', 'DZ'],
-    text: 'weekly',
     width: 2,
     radius: 10,
     padding: 8,
     lineCap: 'round',
-    value: [0,2,5,9,5,10,3,5,0,0,1,8,2,9,0],
+    btnToggle: 'weekly',
+    valueWeekly: [],
+    valueMontly: [],
     fill: false,
     type: 'trend',
     autoLineWidth: false,
@@ -262,15 +198,41 @@ export default {
   created() {
     this.getUserProfile()
     this.getPosts()
+    this.getUsers()
+    this.getWebsocketData()
   },
   computed: {
     ...mapState({
       posts: state => state.posts,
-      user: state => state.profile.data
-    })
+      user: state => state.profile.data,
+      users: state => state.users.data
+    }),
+    newsPostLists() {
+      return this.showAllNews ? this.posts.slice(0, 15) : this.posts.slice(0, 3)
+    },
+    currentSparkData() {
+      return this.mountlySparkData ? this.valueMontly : this.valueWeekly
+    }
   },
   methods: {
-    ...mapActions(['getUserProfile', 'getPosts']),
+    ...mapActions(['getUserProfile', 'getPosts', 'getUsers']),
+    getWebsocketData() {
+      try {
+        this.socket = new WebSocket("wss://stream.binance.com:9443/ws/!ticker@arr")
+        this.socket.onopen = () => {
+          this.socket.onmessage = (e) => {
+            const parseInData = JSON.parse(e.data)
+            const a = parseInData.slice(0,5)
+            const b = a[0].q
+            this.valueWeekly.length < 55 ?
+                this.valueWeekly.push(Number(b.slice(12))) && this.valueMontly.push(Number(b.slice(12))/2+3) :
+                this.valueWeekly.splice(1, 40)
+          }
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    },
   }
 }
 </script>
