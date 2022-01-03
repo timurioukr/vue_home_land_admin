@@ -6,6 +6,7 @@ const routerOptions = [
   { path: "*", component: "404" },
   { path: "/admin", component: "AdminPage" },
   { path: "/login", component: "Login" },
+  { path: "/parent", component: "Parent" },
 ];
 
 const routes = routerOptions.map(route => {

@@ -1,6 +1,6 @@
 <template>
   <div v-if="users && user && posts.length > 1">
-    <SideBar />
+    <side-bar :email='user.email' :avatar="user.avatar"/>
     <v-container>
       <v-app-bar color="rgba(0,0,0,0)" flat >
         <v-text-field
@@ -105,18 +105,14 @@
                 Monthly
               </v-btn>
             </v-btn-toggle>
-            </v-toolbar>
             <v-sparkline
                 :value="currentSparkData"
                 :smooth="radius || false"
                 :padding="padding"
                 :line-width="width"
-                :stroke-linecap="lineCap"
                 :fill="fill"
-                :type="type"
-                :auto-line-width="autoLineWidth"
                 auto-draw
-                color="black"
+                color="primary"
                 class="mt-8 mb-2"
               ></v-sparkline>
           </v-card>
@@ -176,7 +172,6 @@ export default {
     valueMontly: [],
     fill: false,
     type: 'trend',
-    autoLineWidth: false,
     value: 0
   }),
   created() {
