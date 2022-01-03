@@ -69,8 +69,6 @@ export default {
       companyName: "PET PROJECT",
       menuItems: [
         { title: "Home", path: "/" },
-        { title: "What used", path: "school" },
-        { title: "Contact to me", path: "contacts" },
         { title: "Admin panel", path: "admin" },
       ],
     };

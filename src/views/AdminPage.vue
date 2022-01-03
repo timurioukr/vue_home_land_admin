@@ -83,10 +83,7 @@
                           <v-img :src='user.avatar'></v-img>
                         </v-avatar>
                       </div>
-                    <v-row align="center" justify="center">
-                      <v-icon class="mr-1" small>fas fa-hands-wash</v-icon>
-                      <span class="caption">1.5</span>
-                    </v-row>
+
                   </v-list-item>
                 </v-card-actions>
               </v-card>
@@ -120,40 +117,26 @@
                 :auto-line-width="autoLineWidth"
                 auto-draw
                 color="black"
-                class="mt-n8 mb-n8"
+                class="mt-8 mb-2"
               ></v-sparkline>
           </v-card>
         </v-col>
 
-
-        <v-col cols="12" sm="4">
-          <v-card class="rounded-xl pa-4" color="grey lighten-3" flat>
+        <v-col cols="12" sm="4" class="mt-5">
+          <v-card class="rounded-xl pa-5" color="blue lighten-5" flat>
             <v-app-bar color="rgba(0,0,0,0)" tile>
-              <v-btn tile fab small color="orange lighten-4" elevation="0">
-                <v-icon color="black">fas fa-book</v-icon>
-              </v-btn>
+              <v-icon color="black">mdi-comment-text-multiple-outline</v-icon>
               <strong class="subtitle black--text ml-2">
-                Art posted <span class="caption"><br>80</span>
-
+                Comments <span class="caption"><br>{{ initialComments }}</span>
               </strong>
               <v-spacer></v-spacer>
-              <v-icon color="grey" class="ml-2">fas fa-chevron-circle-right</v-icon>
+              <v-icon color="grey" class="ml-2">mdi-chevron-triple-left </v-icon>
             </v-app-bar>
-            <v-app-bar color="rgba(0,0,0,0)" tile>
-              <v-btn tile fab small color="orange lighten-4" elevation="0">
-                <v-icon color="black">fas fa-book</v-icon>
-              </v-btn>
-              <strong class="subtitle black--text ml-2">
-                Art posted <span class="caption"><br>80</span>
 
-              </strong>
-              <v-spacer></v-spacer>
-              <v-icon color="grey" class="ml-2">fas fa-chevron-circle-right</v-icon>
-            </v-app-bar>
-              <v-card color="white" class="rounded-xl mx-4 pa-10" flat>
-                <div class="text-center">
-                  <span>Buy Somth Somth</span>
-                  <v-btn class="mt-5" dark color="black">Purch</v-btn>
+              <v-card color="white" class="rounded-xl pa-1 mt-6" flat>
+                <div class="text-center ma-5">
+                  <h2>Books</h2>
+                  <v-btn class="mt-5" dark color="primary" @click="initialCommentsAdd">Pay</v-btn>
                 </div>
               </v-card>
           </v-card>
@@ -194,6 +177,7 @@ export default {
     fill: false,
     type: 'trend',
     autoLineWidth: false,
+    value: 0
   }),
   created() {
     this.getUserProfile()
@@ -212,10 +196,16 @@ export default {
     },
     currentSparkData() {
       return this.mountlySparkData ? this.valueMontly : this.valueWeekly
+    },
+    initialComments() {
+      return this.valueWeekly.length + this.value
     }
   },
   methods: {
     ...mapActions(['getUserProfile', 'getPosts', 'getUsers']),
+    initialCommentsAdd() {
+      this.value++
+    },
     getWebsocketData() {
       try {
         this.socket = new WebSocket("wss://stream.binance.com:9443/ws/!ticker@arr")

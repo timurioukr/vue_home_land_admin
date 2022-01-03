@@ -3,10 +3,6 @@ import Router from "vue-router";
 
 const routerOptions = [
   { path: "/", component: "Home" },
-  { path: "/school", component: "School" },
-  { path: "/kindergarten", component: "Kindergarten" },
-  { path: "/centr", component: "Centr"},
-  { path: "/contacts", component: "Contacts"},
   { path: "*", component: "404" },
   { path: "/admin", component: "AdminPage" },
   { path: "/login", component: "Login" },
@@ -29,7 +25,7 @@ export const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/', '/school', '/contacts', '/login', '/404'];
+  const publicPages = ['/', '/login', '/404'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
 
