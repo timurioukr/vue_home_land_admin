@@ -1,31 +1,18 @@
 <template lang="pug">
   v-row.ma-15
-    v-col(cols="12", md="6")
-      h2 Уникальные условия в городе
-      v-row.mt-10.ma-5(align="center", justify="center" class="align-self-start")
-        v-col(cols="12", md="4" align="center")
-          v-img(src="../../assets/img/HomePage/langIcon/house.png" class="icon__img")
-          p Охраняемая территория
-        v-col(cols="12", md="4" align="center" class="align-self-start")
-          v-img(src="../../assets/img/HomePage/langIcon/security-shield.png" class="icon__img")
-          p Охрана и видеонаблюдение
-        v-col(cols="12", md="4" align="center" class="align-self-start")
-          v-img(src="../../assets/img/HomePage/langIcon/hot-soup.png" class="icon__img")
-          p Комплексное питание
-        v-col(cols="12", md="4" align="center" class="align-self-start")
-          v-img(src="../../assets/img/HomePage/langIcon/homework.png" class="icon__img")
-          p Выполнение д/з в Школе
-        v-col(cols="12", md="4" align="center" class="align-self-start")
-          v-img(src="../../assets/img/HomePage/langIcon/rocket.png" class="icon__img")
-          p Уникальные факультативы
-        v-col(cols="12", md="4" align="center" class="align-self-start")
-          v-img(src="../../assets/img/HomePage/langIcon/home-button.png" class="icon__img")
-          p График - полупансион
     v-row(class="pa-10").align-center
-      v-col.fife-block-right.text-center(cols="12", md="11") 
-        h2.white--text Запишитесь на экскурсию
-        v-btn.ma-1(color="#ffff", large, outlined, rounded) Записаться
+      v-col.fife-block-right.text-center(cols="12", md="12")
+        h2.white--text Go to admin page?
+        v-btn.ma-1(color="#ffff", large, outlined, rounded @click="$router.push('/login')") Here
 </template>
+
+<script>
+export default {
+  mounted() {
+    // console.log( 'ffff')
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 

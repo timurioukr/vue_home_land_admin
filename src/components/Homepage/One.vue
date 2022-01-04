@@ -3,7 +3,7 @@ div.block-first
   div.text-center
     h2 {{ $t('Home Project')}}
     p {{ $t('Timur Shekhovtsov')}}
-    v-btn.mt-5(color="#000080", large, rounded class="block-first-btn" href="/404") {{ $t('Contact with me')}}
+    v-btn.mt-5(color="#000080", large, rounded class="block-first-btn" href="https://www.linkedin.com/in/shekhovtsoff/") {{ $t('Contact with me')}}
 </template>
 
 <script>

@@ -2,24 +2,10 @@
 v-container.four-block
   v-row.ma-10(class="four-text")
     v-col(cols="12", md="6")
-      h2.mb-5 Почему выбирают «ЭйдоС»:
-      p &#128073 Уникальные технологии образования
-      p &#128073 Эксклюзивный подход к Ребенку
-      p &#128073 Комфортные условия обучения
-      p &#128073 И еще много чего...
-      h3.mb-5 Углубленное изучение
-      v-row.ma-1
-        img(src="../../assets/img/HomePage/langIcon/mathematics (1).png", alt="mathematics" class="icon__img")
-        p Математики
-      v-row.ma-1
-        img(src="../../assets/img/HomePage/langIcon/united-kingdom (1).png", alt="mathematics" class="icon__img")
-        p Английского языка
-      v-row.ma-1
-        img(src="../../assets/img/HomePage/langIcon/germany (1).png", alt="mathematics" class="icon__img")
-        p Немецкого языка
-      v-row.ma-1
-        img(src="../../assets/img/HomePage/langIcon/france (1).png", alt="mathematics" class="icon__img")
-        p Французского языка
+      h2.mb-5 My advantage:
+      p &#128073 quality of work
+      p &#128073 speed in execution
+      p &#128073 understanding of the tasks
     v-col(cols="12", md="6")
       v-carousel(
         hide-delimiters,
@@ -28,12 +14,8 @@ v-container.four-block
         v-carousel-item(
           v-for="(item, i) in items",
           :key="i",
-          :src="require(`@/assets/img/HomePage/carousel/${item.name}`)"
-        ) 
-  v-row
-    v-col.mt-10.mb-10.text-center
-      v-btn.ma-1(color="#282f7e", large, outlined, rounded) Отправить заявку на экскурсию
-        v-icon(right) mdi-chevron-right
+          :src="require(`@/assets/img/petProject/${item.name}.svg`)"
+        )
 </template>
 
 <script>
@@ -43,13 +25,13 @@ export default {
     return {
       items: [
         {
-          name: "1.jpg",
+          name: "undraw_folder_re_j0i0",
         },
         {
-          name: "2.jpg",
+          name: "undraw_product_teardown_re_m1pc",
         },
         {
-          name: "3.jpg",
+          name: "undraw_teacher_re_sico",
         },
       ],
     };
