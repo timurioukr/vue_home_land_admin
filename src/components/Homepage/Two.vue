@@ -7,49 +7,61 @@
           v-card(
             :elevation="hover ? 12 : 2",
             :class="{ 'on-hover': hover }",
-            to="/school"
           )
             v-img(
-              src="../../assets/img/HomePage/buttons/school.jpg",
+              src="../../assets/img/petProject/vue.png",
               height="225px"
             )
-              span.title-span.white--text.p {{ $t('Школа')}}
       v-col(cols="12", md="3")
         v-hover(v-slot="{ hover }")
           v-card(
             :elevation="hover ? 12 : 2",
             :class="{ 'on-hover': hover }",
-            to="/kinderg"
           )
             v-img(
-              src="../../assets/img/HomePage/buttons/kindergarten.jpg",
+              src="../../assets/img/petProject/vuetify.png",
               height="225px"
             )
-              span.title-span.white--text.p {{ $t('Сад')}}
       v-col(cols="12", md="3")
         v-hover(v-slot="{ hover }")
           v-card(
             :elevation="hover ? 12 : 2",
             :class="{ 'on-hover': hover }",
-            to="/centr"
           )
             v-img(
-              src="../../assets/img/HomePage/buttons/centr.jpg",
+              src="../../assets/img/petProject/vuex.png",
               height="225px"
             )
-              span.title-span.white--text.p {{ $t('Центр')}}
       v-col(cols="12", md="3")
         v-hover(v-slot="{ hover }")
           v-card(
             :elevation="hover ? 12 : 2",
             :class="{ 'on-hover': hover }",
-            to="/externat"
           )
             v-img(
-              src="../../assets/img/HomePage/buttons/dist.jpg",
+              src="../../assets/img/petProject/vue118.jpg",
               height="225px"
             )
-              span.title-span.white--text.p {{ $t('Экстернат')}}
+      v-col(cols="12", md="3")
+        v-hover(v-slot="{ hover }")
+          v-card(
+            :elevation="hover ? 12 : 2",
+            :class="{ 'on-hover': hover }",
+          )
+            v-img(
+              src="../../assets/img/petProject/vueauth.jpg",
+              height="225px"
+            )
+      v-col(cols="12", md="3")
+        v-hover(v-slot="{ hover }")
+          v-card(
+            :elevation="hover ? 12 : 2",
+            :class="{ 'on-hover': hover }",
+          )
+            v-img(
+              src="../../assets/img/petProject/vuerouter.jpg",
+              height="225px"
+            )
 </template>
 
 <script>
@@ -62,17 +74,6 @@ export default {
 </script>
 
 <style scoped>
-.title-span {
-  background: #282f7ebb;
-  display: flex;
-  width: fit-content;
-  margin: 165px 15px;
-  border-radius: 5px;
-  padding: 0.5%;
-  font-size: 30px;
-  font-weight: 400;
-  font-family: "Montserrat";
-}
 
 .v-card {
   transition: opacity 0.4s ease-in-out;

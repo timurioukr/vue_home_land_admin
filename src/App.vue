@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-main>
-      <Header />
+      <Header  v-if="this.$route.fullPath !== '/404'" />
         <router-view></router-view>
-      <Footer />
+      <Footer v-if="this.$route.fullPath !== '/404'" />
     </v-main>
   </v-app>
 

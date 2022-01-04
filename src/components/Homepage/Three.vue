@@ -1,32 +1,18 @@
 <template lang="pug">
   v-container(class="text-left three-block")
-    h2(class="mx-10" ) {{ $t('Наша команда')}}
+    h2(class="mx-10" ) {{ $t('Make beautiful code')}}
     v-row(justify="center" class="mt-10" )
       template
         v-col(cols="4" md="2" class="ma-5")
           a(href="")
-          v-img(class="leader-foto elevation-1" src="../../assets/img/HomePage/comands/gredinarova.jpg")
-          h3(class="mt-3") {{ $t('Грединарова Елена Михайловна')}}
-          p {{ $t('Генеральный директор')}}
+          v-img(class="leader-foto elevation-1" src="https://reqres.in/img/faces/3-image.jpg")
+          h3(class="mt-3") {{ $t('Carolina Ibn Akhmad')}}
+          p {{ $t('Designer')}}
         v-col(cols="4" md="2" class="ma-5")
           a(href="#")
-          v-img(class="leader-foto elevation-1" src="../../assets/img/HomePage/comands/gredinarov.jpg")
-          h3(class="mt-3") {{ $t('Грединаров Игорь Леонидович')}}
-          p  {{ $t('Первый заместитель директора')}}
-        v-col(cols="4" md="2" class="ma-5")
-          a(href="")
-          v-img(class="leader-foto elevation-1" src="../../assets/img/HomePage/comands/gredinarova_yana.jpg")
-          h3(class="mt-3") {{ $t('Грединарова Яна Игоревна')}}
-          p  {{ $t('Директор по развитию')}}
-        v-col(cols="4" md="2" class="ma-5")
-          a(href="")
-          v-img(class="leader-foto elevation-1" src="../../assets/img/HomePage/comands/lejbovich.jpg")
-          h3(class="mt-3") {{ $t('Лейбович Елена Викторовна')}}
-          p  {{ $t('Заместитель директора по индивидуальному сопровождению учеников')}}
-    v-row
-      v-col(class="text-center mb-10")
-        v-btn(color="#282f7e" large outlined rounded class="ma-1")  {{ $t('Подробнее о нас')}}
-          v-icon(right) mdi-chevron-right
+          v-img(class="leader-foto elevation-1" src="https://reqres.in/img/faces/5-image.jpg")
+          h3(class="mt-3") {{ $t('John Carter')}}
+          p  {{ $t('Marketologist')}}
 </template>
 
 <script>

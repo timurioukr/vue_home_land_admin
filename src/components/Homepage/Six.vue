@@ -67,7 +67,7 @@ $colorBrend: #282f7e;
 }
 
 .seven-block-right {
-  background: $color-block, url("../../assets/img/HomePage/vipusk.jpg");
+  background: $color-block, url("../../assets/img/petProject/kod.jpg");
   @include comments-seven-block;
 }
 
@@ -89,7 +89,7 @@ p {
 }
 
 .fife-block-right {
-  background: $color-block, url("../../assets/img/HomePage/vipusk.jpg");
+  background: $color-block, url("../../assets/img/petProject/kod.jpg");
   @include leadgen-fife-block;
 }
 

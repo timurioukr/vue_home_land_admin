@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       dialogMenu: false,
-      companyName: "PET PROJECT",
+      companyName: "HOME PROJECT",
       menuItems: [
         { title: "Home", path: "/" },
         { title: "Admin panel", path: "admin" },

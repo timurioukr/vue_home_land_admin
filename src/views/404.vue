@@ -1,14 +1,13 @@
 <template>
     <v-container>
       <div class="text-center">
-        <h1>Wow, this error 404</h1>
+        <h1>Maybe, we have a problem</h1>
         <img src="../assets/img/image404.gif" alt="">
       </div>
       <div class="text-center">
-        <h2>Looks as if you've lost your way</h2>
-        <v-btn class="mt-10 white--text" to="/" color="blue">Go home</v-btn>
+        <h2>I go to fixed, and you go to home page?</h2>
+        <v-btn class="mt-10 rounded-xl white--text" to="/" color="primary">Yes</v-btn>
       </div>
-        
     </v-container>
 </template>
 
