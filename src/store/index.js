@@ -25,7 +25,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getUserProfile (context) {
-       const response = await fetch('https://reqres.in/api/users/2')
+      const response = await fetch('https://reqres.in/api/users/2')
         const data = await response.json()
         response && context.commit('SET_DATA_PROFILE', {profile: data })
         return response
@@ -36,8 +36,9 @@ export default new Vuex.Store({
       response && context.commit('SET_DATA_PROFILE', {posts: data })
       return response
     },
-    async getUsers (context) {
-      const response = await fetch('https://reqres.in/api/users?page=1')
+    async getUsers (context, params) {
+      console.log(params);
+      const response = await fetch(`https://reqres.in/api/users${ params ? `?search=${ params }` : ""}`)
       const data = await response.json()
       response && context.commit('SET_DATA_PROFILE', {users: data })
       return response

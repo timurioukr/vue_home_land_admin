@@ -4,6 +4,7 @@
     <v-container>
       <v-app-bar color="rgba(0,0,0,0)" flat >
         <v-text-field
+          v-model="search"
           label="Search..."
           class="pt-5"
           filled
@@ -153,6 +154,7 @@ export default {
     SideBar
   },
   data: () => ({
+    search: '',
     mountlySparkData: false,
     itemDates: {
       title: 'Soms',
@@ -172,13 +174,20 @@ export default {
     valueMontly: [],
     fill: false,
     type: 'trend',
-    value: 0
+    value: 0,
+    currentPage: 1,
+
   }),
   created() {
     this.getUserProfile()
     this.getPosts()
     this.getUsers()
     this.getWebsocketData()
+  },
+  watch: {
+    search (val) {
+      if (this.search.length > 2 || !this.search) this.searchOnCards(val)
+    }
   },
   computed: {
     ...mapState({
@@ -198,8 +207,15 @@ export default {
   },
   methods: {
     ...mapActions(['getUserProfile', 'getPosts', 'getUsers']),
+    searchOnCards (val) {
+      this.getUsers(val)
+    },
     initialCommentsAdd() {
       this.value++
+    },
+    changePage (e) {
+      this.currentPage = e
+      this.getUsers({ 'page': e })
     },
     getWebsocketData() {
       try {
